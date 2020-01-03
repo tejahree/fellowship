@@ -1,5 +1,14 @@
 package com.bridgelabz.fellowshipprogram.datastructure;
 
+import java.util.Arrays;
+
+
+
+
+/**
+ * @author admin1
+ *
+ */
 public class Utility {
 static int[] bubblesort(int[] arr) {
 	int temp;
@@ -13,6 +22,10 @@ static int[] bubblesort(int[] arr) {
 		}}
 	return arr;
 }
+/**
+ * @author admin1
+ *
+ */
 static int[] intintoarray(int e1) {
 	int k=0;
 	int[] arr=new int[10];
@@ -24,6 +37,10 @@ static int[] intintoarray(int e1) {
 	}
 	return arr;
 }
+/**
+ * @author admin1
+ *
+ */
 static boolean primeornot(int x) {
 	int i=1;
 	do {
@@ -33,5 +50,26 @@ static boolean primeornot(int x) {
 		return true;
 	}else {return false;}
 
+}
+/**
+ * @author 
+ *
+ */
+public static boolean anagramOrNot(char[] str,char[] str1) {
+	int n1=str.length;
+	int n2=str1.length;
+	
+	if(n1!=n2)
+
+		return false;
+	Arrays.sort(str);
+	Arrays.sort(str1);
+	for(int i=0;i<n1;i++) 
+		if(str[i]!=str1[i])
+			return false;
+	
+	
+	
+	return true;
 }
 }
