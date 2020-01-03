@@ -9,7 +9,7 @@ System.out.println("enter number\n");
 	int a=sc.nextInt();
 	int n=(int)Math.pow(2, a);
 	System.out.println("Think any number between " + 0 +"and " + (n-1));
-	int scerate = find(0,n);
+	int scerate = find(0,n-1);
 	System.out.println("you guess is:  " + scerate);
 }
 
@@ -18,7 +18,8 @@ private static int find(int l, int h) {
   if((h-l)==1)
 	  return l;
  int mid=(l+h)/2;
- System.out.println("Is it less then this number ?  "+mid);
+ //System.out.println("Is it less then this number ?  "+mid);
+ //System.out.println("Is your number between "+l + "-" + mid + "or " + (mid+1) + "-"+ h);
  boolean result=sc.nextBoolean();
  if(result==true) {
 	 return find(l,mid);
