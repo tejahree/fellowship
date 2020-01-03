@@ -1,4 +1,6 @@
-package com.bridgelabz.fellowshipprogram.logicalprogram;
+
+	
+	package com.bridgelabz.fellowshipprogram.logicalprogram;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,27 +13,28 @@ Random r= new Random();
 	int stake=sc.nextInt();
 	int goal=sc.nextInt();
 	int trial=sc.nextInt();
+
 	int loss=0,win=0;
 	int cash;
 	
 	
 	cash=stake;
-	while(trial!=0) {
-		if((cash>0) && (cash<goal)) {
+	for(int i=0;i<trial;i++){
+	
 	if(r.nextInt(1000)<500) {
 		cash--;
-		trial--;
+		
 		}
 	else {
 		cash++;
-		trial--;
+		
 		}
-		}
+		
 
 		if(cash==goal)
 			win++;
 
-		if(cash==0)
+		if((cash==0 )|| (cash<goal))
 			loss++;
 	
 	}
@@ -40,7 +43,8 @@ Random r= new Random();
 	
 	
 	
-	System.out.println("win "+win +"and bets " +loss);
+	System.out.println("win "+win +"and loss " +loss);
 	//System.out.println("percentage :--"+(win/trial)*100);
 }
 }
+
