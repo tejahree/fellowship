@@ -15,7 +15,17 @@ public static class Node{
 	   next=null;
    }
 }
-   public static UnOrderedList insert(UnOrderedList list ,String data) {
+   
+/**
+ * This method is used to insert a node at the end of 
+ * Linked List
+ * 
+ * @param list-> input link list 
+ * @param data-> data of the new node that needs to be added
+ * @return list-> modified list
+ */
+
+public static UnOrderedList insertAtEnd(UnOrderedList list ,String data) {
 	   Node new_node=new Node(data);
 	   new_node.next=null;
 	   
@@ -30,6 +40,11 @@ public static class Node{
 	   }
 	   return list;
    }
+/**
+ * @param list
+ * @param data
+ * @return
+ */
    public static UnOrderedList pop(UnOrderedList list ,String string ) {
 	   Node currnode=list.head;
 	  // Node last=list.head;
@@ -48,7 +63,7 @@ public static class Node{
 	     }
 	     if(currnode==null) {
 	    	 System.out.println("value not found\n");
-list=insert(list,string);
+list=insertAtEnd(list,string);
 	     }
 		
 	   return list;
@@ -76,7 +91,7 @@ System.out.println(s+"\n");
 String[] stringarray= s.split(" ");
 UnOrderedList list= new UnOrderedList();
 for(int i=0;i<stringarray.length;i++) {
-	list=insert(list,stringarray[i]);
+	list=insertAtEnd(list,stringarray[i]);
 }
 
 printlist(list);
