@@ -19,7 +19,8 @@ public static void main(String[] args) {
 static void recursion(char[] array) {
 	int length=array.length;
 	int count=0;
-	int fact=factorial(length);	char[] duplicate=new char[length];
+	int fact=factorial(length);
+	char[] duplicate=new char[length];
 	
 	while(count!=fact) {
 			for(int i=0;i<length;i++) {
@@ -27,30 +28,34 @@ static void recursion(char[] array) {
 					
 					duplicate=swap(array,i,j);
 						if(i!=j) {
-							for(char c:duplicate) 
+							for(char c:duplicate) {
 								System.out.print(c);
-								
+							}
+							count++;
 						}
+						
 						System.out.println();
+						
 				}
-			count++;
+			
 			System.out.println();
 			}
-		
+			
 	}
+	
 }
 
-static char[] swap(char[] arr,int a,int b) {
+static char[] swap(char[] array,int a,int b) {
 	char temp;
-	temp=arr[a];
-	arr[a]=arr[b];
-	arr[b]=temp;
-	return arr;
+	temp=array[a];
+	array[a]=array[b];
+	array[b]=temp;
+	return array;
 }
 
-static int factorial(int l) {
+static int factorial(int length) {//this is calculating factorial of the length of string
 	int sum=1;
-for(int i=l;i>=1;i--) {
+for(int i=length;i>=1;i--) {
 	sum=sum*i;
 }
 	return sum;
