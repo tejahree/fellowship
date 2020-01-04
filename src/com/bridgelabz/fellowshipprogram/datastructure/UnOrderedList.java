@@ -1,9 +1,13 @@
 package com.bridgelabz.fellowshipprogram.datastructure;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+
+import com.bridgelabz.fellowshipprogram.datastructure.OrderedList.Node;
 
 public class UnOrderedList {
 	Node head;
@@ -69,36 +73,8 @@ list=insertAtEnd(list,string);
 	   return list;
    }
    
-   static void printlist(UnOrderedList list) {
-	   Node last= list.head;
-	   System.out.println("Linked list\n");
-	   while(last!=null) {//here we cannot write while(list.next!=null) because the last node of list has its next
-		   //value null of if list.next!=null then it will not enter into the while loop and the last value of the list 
-		   //will not print
-		   System.out.println(last.data);
-		   last=last.next;
-	   }
-   }
-   
+  
 
-public static void main(String[] args) throws IOException {
 	
-	BufferedReader rr= new BufferedReader(new FileReader("/home/admin1/Desktop/dir/String44.txt"));
-Scanner sc=new Scanner(System.in);
-	String s=rr.readLine();
-System.out.println("string\n");
-System.out.println(s+"\n");
-String[] stringarray= s.split(" ");
-UnOrderedList list= new UnOrderedList();
-for(int i=0;i<stringarray.length;i++) {
-	list=insertAtEnd(list,stringarray[i]);
-}
-
-printlist(list);
-System.out.println("Enter the string to be pop\n");
-String string = sc.next();
-list=pop(list,string);
-printlist(list);
-}
 
 }
